@@ -8,4 +8,8 @@ class Bank
     @balance = balance
     @transactions = []
   end
+
+  private
+
+  attr_writer :balance, :transactions
 end
