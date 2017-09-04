@@ -1,6 +1,6 @@
 class Bank
 
-  attr_reader :balance
+  attr_reader :balance, :transactions
 
   INITIAL_BALANCE = 0
 

@@ -8,5 +8,9 @@ describe Bank do
     it 'has a default balance of zero' do
       expect(bank.balance).to eq(0)
     end
+
+    it 'has a default transation history' do
+      expect(bank.transactions).to eq [] 
+    end
   end
 end
