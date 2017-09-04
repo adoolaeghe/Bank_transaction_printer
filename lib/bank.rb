@@ -12,16 +12,25 @@ class Bank
   end
 
   def deposit(amount)
-    @balance += amount
+    increase_balance(amount)
     @transactions.push([{date: Date.today, amount: amount, balance: @balance}])
   end
 
   def withdraw(amount)
-    @balance -= amount
+    decrease_balance(amount)
     @transactions.push([{date: Date.today, amount: -amount, balance: @balance}])
   end
 
+
   private
+  
+  def increase_balance(amount)
+    @balance += amount
+  end
+
+  def decrease_balance(amount)
+    @balance -= amount
+  end
 
   attr_writer :balance, :transactions
 end

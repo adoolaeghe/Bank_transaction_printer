@@ -35,7 +35,7 @@ describe Bank do
       expect(bank.balance).to eq (500)
     end
     it 'adds a transaction to the transaction history' do
-      expect(bank.transactions).to include [{:date=> Date.today, :amount=>-500, :balance=>1000}]
+      expect(bank.transactions).to include [{:date=> Date.today, :amount=>-500, :balance=>500}]
     end
   end
 
