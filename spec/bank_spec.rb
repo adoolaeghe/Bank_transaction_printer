@@ -34,6 +34,9 @@ describe Bank do
     it 'decrease the balance by the required amount' do
       expect(bank.balance).to eq (500)
     end
+    it 'adds a transaction to the transaction history' do
+      expect(bank.transactions).to include [{:date=> Date.today, :amount=>-500, :balance=>1000}]
+    end
   end
 
   context 'deposit money'

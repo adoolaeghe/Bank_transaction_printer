@@ -18,6 +18,7 @@ class Bank
 
   def withdraw(amount)
     @balance -= amount
+    @transactions.push([{date: Date.today, amount: -amount, balance: @balance}])
   end
 
   private
