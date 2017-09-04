@@ -10,7 +10,21 @@ describe Bank do
     end
 
     it 'has a default transation history' do
-      expect(bank.transactions).to eq [] 
+      expect(bank.transactions).to eq []
     end
   end
+
+  context 'deposit an amount to the account' do
+    before do
+      bank.deposit(1000)
+    end
+    it 'increase the balance by the required amount' do
+      expect(bank.balance).to eq (1000)
+    end
+    it 'adds a transaction to the transaction history' do
+      expect(bank.transactions).to include [{:date=> Date.today, :amount=>1000, :balance=>1000}]
+    end
+  end
+
+  context 'deposit money'
 end

@@ -1,3 +1,5 @@
+require 'date'
+
 class Bank
 
   attr_reader :balance, :transactions
@@ -9,6 +11,11 @@ class Bank
     @transactions = []
   end
 
+  def deposit(amount)
+    @balance += amount
+    @transactions.push([{date: Date.today, amount: amount, balance: @balance}])
+  end
+  
   private
 
   attr_writer :balance, :transactions
