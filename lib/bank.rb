@@ -15,7 +15,11 @@ class Bank
     @balance += amount
     @transactions.push([{date: Date.today, amount: amount, balance: @balance}])
   end
-  
+
+  def withdraw(amount)
+    @balance -= amount
+  end
+
   private
 
   attr_writer :balance, :transactions

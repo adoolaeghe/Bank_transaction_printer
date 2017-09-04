@@ -26,5 +26,15 @@ describe Bank do
     end
   end
 
+  context 'withdrawal an amount of money from the account' do
+    before do
+      bank.deposit(1000)
+      bank.withdraw(500)
+    end
+    it 'decrease the balance by the required amount' do
+      expect(bank.balance).to eq (500)
+    end
+  end
+
   context 'deposit money'
 end
