@@ -1,12 +1,9 @@
 class Printer
   def print_transactions(transactions)
-    print_table_titles
     print_rows(transactions)
   end
 
-  private
-
-  def print_table_titles
+  def print_header
     return "date || credit || debit || balance\n"
   end
 

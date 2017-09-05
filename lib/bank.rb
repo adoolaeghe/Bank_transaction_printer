@@ -1,6 +1,5 @@
 require 'date'
-
-
+require 'transactions'
 class Bank
 
   attr_reader :balance, :transactions
@@ -9,25 +8,23 @@ class Bank
 
   def initialize(balance = INITIAL_BALANCE)
     @balance = balance
-    @transactions = []
-    @printer = Printer.new
+    @transactions = Transactions.new
   end
 
   def deposit(amount)
     increase_balance(amount)
-    @transactions.push({date: Date.today, credit: amount, balance: @balance})
+    @transactions.add_credit_transaction(amount, balance)
   end
 
   def withdraw(amount)
     decrease_balance(amount)
-    @transactions.push({date: Date.today, debit: -amount, balance: @balance})
+    @transactions.add_debit_transaction(amount, balance)
   end
 
-  def printer()
-    @transactions.each do |transaction|
-      return @printer.print_transactions(transaction)
-    end
+  def print_transactions
+    @transactions.print_history
   end
+
   private
 
   def increase_balance(amount)
@@ -37,6 +34,4 @@ class Bank
   def decrease_balance(amount)
     @balance -= amount
   end
-
-  attr_writer :balance, :transactions
 end

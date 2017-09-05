@@ -8,10 +8,6 @@ describe Bank do
     it 'has a default balance of zero' do
       expect(bank.balance).to eq(0)
     end
-
-    it 'has a default transation history' do
-      expect(bank.transactions).to eq []
-    end
   end
 
   context 'deposit an amount to the account' do
@@ -20,9 +16,6 @@ describe Bank do
     end
     it 'increase the balance by the required amount' do
       expect(bank.balance).to eq (1000)
-    end
-    it 'adds a transaction to the transaction history' do
-      expect(bank.transactions).to include ({:date=> Date.today, :credit=>1000, :balance=>1000})
     end
   end
 
@@ -34,9 +27,6 @@ describe Bank do
     it 'decrease the balance by the required amount' do
       expect(bank.balance).to eq (500)
     end
-    it 'adds a transaction to the transaction history' do
-      expect(bank.transactions).to include ({:date=> Date.today, :debit=>-500, :balance=>500})
-    end
   end
 
   context 'print the transactions history' do
@@ -44,9 +34,7 @@ describe Bank do
       bank.deposit(1000)
     end
     it 'prints the transactions table history with one transactions row' do
-      expect(bank.printer).to eq ("2017-09-05 || 1000 ||  || 1000")
+      expect(bank.print_transactions).to eq ("2017-09-05 || 1000 ||  || 1000")
     end
   end
-
-  context 'deposit money'
 end
