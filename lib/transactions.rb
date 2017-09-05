@@ -13,7 +13,7 @@ class Transactions
   end
 
   def add_debit_transaction(amount, balance)
-    @history.push({ date: Date.today, debit: amount, balance: balance })
+    @history.push({ date: Date.today, debit: -amount, balance: balance })
   end
 
   def print_history

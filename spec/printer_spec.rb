@@ -11,7 +11,7 @@ describe Printer do
     expect(printer.print_header).to eq("date || credit || debit || balance\n")
   end
 
-  it 'is expected to print logs' do
+  it 'is expected to print transactions' do
     expect(printer.print_transactions(test_transaction)).to eq("2017-09-04 || 100 ||  || 900")
   end
 end
