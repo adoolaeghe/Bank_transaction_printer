@@ -1,7 +1,7 @@
 class Printer
   def print_transactions(transactions)
     print_table_titles
-    print_transactions_rows(transactions)
+    print_rows(transactions)
   end
 
   private
@@ -10,7 +10,7 @@ class Printer
     return "date || credit || debit || balance\n"
   end
 
-  def print_transactions_rows(transactions)
+  def print_rows(transactions)
     return "#{transactions[:date]} || #{transactions[:credit]} || #{transactions[:debit]} || #{transactions[:balance]}"
   end
 end

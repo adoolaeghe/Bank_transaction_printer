@@ -39,5 +39,14 @@ describe Bank do
     end
   end
 
+  context 'print the transactions history' do
+    before do
+      bank.deposit(1000)
+    end
+    it 'prints the transactions table history with one transactions row' do
+      expect(bank.printer).to eq ("2017-09-05 || 1000 ||  || 1000")
+    end
+  end
+
   context 'deposit money'
 end

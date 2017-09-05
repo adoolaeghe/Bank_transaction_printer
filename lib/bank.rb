@@ -23,6 +23,11 @@ class Bank
     @transactions.push({date: Date.today, debit: -amount, balance: @balance})
   end
 
+  def printer()
+    @transactions.each do |transaction|
+      return @printer.print_transactions(transaction)
+    end
+  end
   private
 
   def increase_balance(amount)
