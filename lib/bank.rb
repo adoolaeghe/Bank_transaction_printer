@@ -17,6 +17,7 @@ class Bank
   end
 
   def withdraw(amount)
+    checking_balance(withdrawal)
     decrease_balance(amount)
     @transactions.add_debit_transaction(amount, balance)
   end
@@ -33,5 +34,9 @@ class Bank
 
   def decrease_balance(amount)
     @balance -= amount
+  end
+
+  def checking_balance(amount)
+    raise 'You have unsufficient money in your account!' if balance < withdrawal.amount
   end
 end

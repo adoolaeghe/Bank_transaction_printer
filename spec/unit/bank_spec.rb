@@ -24,8 +24,12 @@ describe Bank do
       bank.deposit(1000)
       bank.withdraw(500)
     end
-    it 'decrease the balance by the required amount' do
+    it 'decrease the balance by the required amount if sufficient amount' do
       expect(bank.balance).to eq (500)
+    end
+    it 'decrease the balance by the required amount if sufficient amount' do
+      bank.withdraw(600)
+      expect(bank.balance).to raise_error(RuntimeError, 'You have unsufficient money in your account!')
     end
   end
 

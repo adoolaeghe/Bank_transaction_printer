@@ -13,7 +13,7 @@ describe Transactions do
     end
   end
 
-  context 'add debit transaction to history' do
+  context 'add credit transaction to history' do
     before do
       transactions.add_credit_transaction(amount, balance)
     end
@@ -30,7 +30,7 @@ describe Transactions do
     end
   end
 
-  context 'add debit transaction to history' do
+  context 'prints the transaction history' do
       before do
         transactions.add_debit_transaction(amount, balance)
       end
