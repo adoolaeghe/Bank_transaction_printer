@@ -17,7 +17,7 @@ describe Bank do
   context 'deposit an amount to the account' do
     before { bank.deposit(deposit) }
     it 'increase the balance by the required amount' do
-      expect(bank.balance).to eq (deposit)
+      expect(bank.balance).to eq(deposit)
     end
   end
 
@@ -28,7 +28,7 @@ describe Bank do
     end
 
     it 'decrease the balance by the required amount if sufficient amount' do
-      expect(bank.balance).to eq (withdraw)
+      expect(bank.balance).to eq(withdraw)
     end
   end
 

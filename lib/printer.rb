@@ -1,6 +1,6 @@
 class Printer
 
-  def initialize()
+  def initialize
     @statement = ["date || credit || debit || balance\n"]
   end
 
@@ -19,5 +19,5 @@ class Printer
   def print_rows(transactions)
     @statement.push("#{transactions[:date]} || #{transactions[:credit]} || #{transactions[:debit]} || #{transactions[:balance]}")
   end
-  
+
 end
