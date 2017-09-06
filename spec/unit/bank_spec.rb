@@ -1,8 +1,10 @@
 require 'bank'
+require 'date'
 
 describe Bank do
 
-  subject(:bank){described_class.new}
+  subject(:bank) { described_class.new }
+  let(:date) { Date.today }
 
   context 'when initialized' do
     it 'has a default balance of zero' do
@@ -24,12 +26,13 @@ describe Bank do
       bank.deposit(1000)
       bank.withdraw(500)
     end
+
     it 'decrease the balance by the required amount if sufficient amount' do
       expect(bank.balance).to eq (500)
     end
+
     it 'decrease the balance by the required amount if sufficient amount' do
-      bank.withdraw(600)
-      expect(bank.balance).to raise_error(RuntimeError, 'You have unsufficient money in your account!')
+      expect {withdraw(amount)}.to raise_error(RuntimeError, "oops")
     end
   end
 
@@ -38,7 +41,7 @@ describe Bank do
       bank.deposit(1000)
     end
     it 'prints the transactions table history with one transactions row' do
-      expect(bank.print_transactions).to eq ("2017-09-05 || 1000 ||  || 1000")
+      expect(bank.print_transactions).to eq ("#{date} || 1000 ||  || 1000")
     end
   end
 end
