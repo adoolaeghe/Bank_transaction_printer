@@ -18,18 +18,19 @@ So that I can track my spending,
 I would like to print the transactions history with the bank.
 ```
 
-```
 
  ### To use
- Clone the directory
  ```
+ Clone the directory
  git clone https://github.com/eugeniaguerrero/bank-tech-test.git
  cd bank-tech-test
+ ```
 
 
  In irb:
  ```
  $ irb
+ >> bundle install
  >> require './lib/bank'
  ```
  To make a deposit:
@@ -44,4 +45,12 @@ I would like to print the transactions history with the bank.
  To print the bank statement:
  ```
  >> bank.print_transactionsx(500)
+ ```
+
+ ## To run tests:
+
+ In irb:
+ ```
+ $ irb
+ >> rspec
  ```

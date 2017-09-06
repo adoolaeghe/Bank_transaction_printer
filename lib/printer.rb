@@ -1,15 +1,23 @@
 class Printer
 
-  def print_transactions(transactions)
-    print_rows(transactions)
+  def initialize()
+    @statement = ["date || credit || debit || balance\n"]
   end
 
-  def print_header
-    return "date || credit || debit || balance\n"
+  def print_statement
+    @statement.join(' ')
   end
+
+  def print_transactions(history)
+    history.each do |transaction|
+      print_rows(transaction)
+    end
+  end
+
+  private
 
   def print_rows(transactions)
-    return "#{transactions[:date]} || #{transactions[:credit]} || #{transactions[:debit]} || #{transactions[:balance]}"
+    @statement.push("#{transactions[:date]} || #{transactions[:credit]} || #{transactions[:debit]} || #{transactions[:balance]}")
   end
-
+  
 end
