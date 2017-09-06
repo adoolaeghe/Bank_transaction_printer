@@ -5,20 +5,21 @@ After describing the user stories, I completed each of them using TDD. I decided
 ### User Stories
 
 ```
-As a user, 
-So that I can secure my money, 
-I would like to deposit money to the bank. 
+As a user,
+So that I can secure my money,
+I would like to deposit money to the bank.
 
-As a user, 
-So that I can spend my money, 
+As a user,
+So that I can spend my money,
 I would like to withdraw money from the bank.
 
-As a user, 
-So that I can track my spending, 
+As a user,
+So that I can track my spending,
 I would like to print the transactions history with the bank.
 ```
 
-  ```
+```
+
  ### To use
  Clone the directory
  ```
@@ -26,11 +27,10 @@ I would like to print the transactions history with the bank.
  cd bank-tech-test
 
 
- In pry:
+ In irb:
  ```
- $ pry
+ $ irb
  >> require './lib/bank'
- >> require './lib/account_statement'
  ```
  To make a deposit:
  ```
@@ -43,5 +43,5 @@ I would like to print the transactions history with the bank.
  ```
  To print the bank statement:
  ```
- >>
+ >> bank.print_transactionsx(500)
  ```

@@ -1,5 +1,6 @@
 require 'date'
-require 'transactions'
+require_relative 'printer'
+require_relative 'transactions'
 class Bank
 
   attr_reader :balance, :transactions
